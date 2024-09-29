@@ -9,6 +9,7 @@ class ServiceTest {
 
     float weight, height;
 
+//    Boundary testing
     @Test
     void testCase1() {
         weight = 70.0f;
@@ -83,5 +84,54 @@ class ServiceTest {
         height = 1.7f;
 
         assertEquals("Obesity", service.healthStatusBasedOnBMI(weight, height));
+    }
+
+//    Decision table testing
+    @Test
+    void testCase10() {
+        weight = -50.0f;
+        height = 1.7f;
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            service.healthStatusBasedOnBMI(weight, height);
+        });
+    }
+
+    @Test
+    void testCase11() {
+        weight = 70.0f;
+        height = -1.8f;
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            service.healthStatusBasedOnBMI(weight, height);
+        });
+    }
+
+    @Test
+    void testCase12() {
+        weight = 62.5f;
+        height = 1.65f;
+
+        assertEquals("Normal", service.healthStatusBasedOnBMI(weight, height));
+    }
+
+    @Test
+    void testCase13() {
+        weight = 635.01f;
+        height = 1.89f;
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            service.healthStatusBasedOnBMI(weight, height);
+        });
+    }
+
+    @Test
+    void testCase14() {
+        weight = 70f;
+        height = 30.11f;
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            service.healthStatusBasedOnBMI(weight, height);
+        });
     }
 }
