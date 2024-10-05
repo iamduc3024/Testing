@@ -11,7 +11,6 @@ public class Service {
             throw new IllegalArgumentException("Weight must be less than 635 or height must be less than 2.51.");
         }
         float BMI = weight / (height * height);
-
         if (BMI < 18.5) {
             return "Thin";
         } else if (BMI >= 18.5 && BMI < 25) {
