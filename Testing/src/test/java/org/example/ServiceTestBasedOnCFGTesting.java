@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ServiceTestBasedOnCFGTest {
+class ServiceTestBasedOnCFGTesting {
     Service service = new Service();
 
     float weight, height;

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ServiceTestBasedOnDecisionTable {
+class ServiceTestBasedOnDecisionTableTesting {
     Service service = new Service();
 
     float weight, height;
